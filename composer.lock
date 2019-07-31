@@ -4,8 +4,179 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94d4bf9ac7f4a933030e46a346ee2917",
+    "content-hash": "cc372385632b5a7bcabfd298d71abb96",
     "packages": [
+        {
+            "name": "ac-developers/artisan-generator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/acdevelopers/artisan-generator.git",
+                "reference": "8455873d9a80ddff7351c7a7f0f8cad2e627fc4b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/acdevelopers/artisan-generator/zipball/8455873d9a80ddff7351c7a7f0f8cad2e627fc4b",
+                "reference": "8455873d9a80ddff7351c7a7f0f8cad2e627fc4b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~5.6.0|~5.7.0|~5.8.0|~5.9.0",
+                "illuminate/console": "~5.6.0|~5.7.0|~5.8.0|~5.9.0",
+                "illuminate/filesystem": "~5.6.0|~5.7.0|~5.8.0|~5.9.0",
+                "illuminate/support": "~5.6.0|~5.7.0|~5.8.0|~5.9.0",
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "AcDevelopers\\ArtisanGenerator\\GeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AcDevelopers\\ArtisanGenerator\\": "src/AcDevelopers/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anitche Chisom",
+                    "email": "anitchec.dev@gmail.com"
+                }
+            ],
+            "description": "Simple custom class generator for Laravel",
+            "keywords": [
+                "artisan",
+                "generator",
+                "laravel"
+            ],
+            "time": "2019-07-31T18:17:14+00:00"
+        },
+        {
+            "name": "ac-developers/eloquent-repository",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/acdevelopers/eloquent-repository.git",
+                "reference": "349cc6f5e49168f1c0e5bba573cda27dcc8d082c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/acdevelopers/eloquent-repository/zipball/349cc6f5e49168f1c0e5bba573cda27dcc8d082c",
+                "reference": "349cc6f5e49168f1c0e5bba573cda27dcc8d082c",
+                "shasum": ""
+            },
+            "require": {
+                "ac-developers/artisan-generator": "dev-master",
+                "illuminate/config": "~5.6.0|~5.7.0|~5.8.0|~5.9.0",
+                "illuminate/console": "~5.6.0|~5.7.0|~5.8.0|~5.9.0",
+                "illuminate/database": "~5.6.0|~5.7.0|~5.8.0|~5.9.0",
+                "illuminate/filesystem": "~5.6.0|~5.7.0|~5.8.0|~5.9.0",
+                "illuminate/http": "~5.6.0|~5.7.0|~5.8.0|~5.9.0",
+                "illuminate/pagination": "~5.6.0|~5.7.0|~5.8.0|~5.9.0",
+                "illuminate/support": "~5.6.0|~5.7.0|~5.8.0|~5.9.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "fzaninotto/faker": "^1.8",
+                "vlucas/phpdotenv": "^3.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "AcDevelopers\\EloquentRepository\\RepositoryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AcDevelopers\\EloquentRepository\\": "src/AcDevelopers/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anitche Chisom",
+                    "email": "anitchec.dev@gmail.com"
+                }
+            ],
+            "description": "Eloquent repository",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "repository",
+                "services"
+            ],
+            "time": "2019-07-14T08:49:59+00:00"
+        },
+        {
+            "name": "davejamesmiller/laravel-breadcrumbs",
+            "version": "5.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/davejamesmiller/laravel-breadcrumbs.git",
+                "reference": "6465e8710341578092fdd8aea24319d4f53ab27c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/davejamesmiller/laravel-breadcrumbs/zipball/6465e8710341578092fdd8aea24319d4f53ab27c",
+                "reference": "6465e8710341578092fdd8aea24319d4f53ab27c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.6.*|5.7.*|5.8.*",
+                "illuminate/view": "5.6.*|5.7.*|5.8.*",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "laravel/framework": "5.6.*|5.7.*|5.8.*",
+                "orchestra/testbench": "3.6.*|3.7.*|3.8.*",
+                "php-coveralls/php-coveralls": "^1.0",
+                "phpunit/phpunit": "7.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DaveJamesMiller\\Breadcrumbs\\BreadcrumbsServiceProvider"
+                    ],
+                    "aliases": {
+                        "Breadcrumbs": "DaveJamesMiller\\Breadcrumbs\\Facades\\Breadcrumbs"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DaveJamesMiller\\Breadcrumbs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dave James Miller",
+                    "email": "dave@davejamesmiller.com"
+                }
+            ],
+            "description": "A simple Laravel-style way to create breadcrumbs.",
+            "homepage": "https://github.com/davejamesmiller/laravel-breadcrumbs",
+            "keywords": [
+                "laravel"
+            ],
+            "time": "2019-02-27T13:09:37+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -467,6 +638,49 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "jamesmills/eloquent-uuid",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jamesmills/eloquent-uuid.git",
+                "reference": "f281c96b5ef69377ae4ad4d10fd8fffb818aa1f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jamesmills/eloquent-uuid/zipball/f281c96b5ef69377ae4ad4d10fd8fffb818aa1f9",
+                "reference": "f281c96b5ef69377ae4ad4d10fd8fffb818aa1f9",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.2.* || 5.4.* || 5.5.* || 5.6.*|| 5.7.*|| 5.8.*",
+                "php": ">=5.6.0",
+                "ramsey/uuid": "^3.2"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "JamesMills\\Uuid\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Mills",
+                    "email": "james@jamesmills.co.uk"
+                }
+            ],
+            "description": "A Laravel Eloquent Model trait for adding and using a uuid with models",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "uuid"
+            ],
+            "time": "2019-04-21T15:15:41+00:00"
         },
         {
             "name": "laravel/framework",
@@ -1413,6 +1627,76 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "silber/bouncer",
+            "version": "v1.0.0-rc.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JosephSilber/bouncer.git",
+                "reference": "0bd51dd5aeddc80f4b6da1bf2f817bdb7cb2871e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JosephSilber/bouncer/zipball/0bd51dd5aeddc80f4b6da1bf2f817bdb7cb2871e",
+                "reference": "0bd51dd5aeddc80f4b6da1bf2f817bdb7cb2871e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "5.1.20 - 5.8",
+                "illuminate/cache": "5.1.20 - 5.8",
+                "illuminate/container": "5.1.20 - 5.8",
+                "illuminate/contracts": "5.1.20 - 5.8",
+                "illuminate/database": "5.1.20 - 5.8"
+            },
+            "require-dev": {
+                "illuminate/console": "5.1.20 - 5.8",
+                "illuminate/events": "5.1.20 - 5.8",
+                "larapack/dd": "^1.1",
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "^4.8.35"
+            },
+            "suggest": {
+                "illuminate/console": "Allows running the bouncer:clean artisan command",
+                "illuminate/events": "Required for multi-tenancy support"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Silber\\Bouncer\\BouncerServiceProvider"
+                    ],
+                    "aliases": {
+                        "Bouncer": "Silber\\Bouncer\\BouncerFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Silber\\Bouncer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joseph Silber",
+                    "email": "contact@josephsilber.com"
+                }
+            ],
+            "description": "Eloquent roles and abilities.",
+            "keywords": [
+                "abilities",
+                "acl",
+                "capabilities",
+                "eloquent",
+                "laravel",
+                "permissions",
+                "roles"
+            ],
+            "time": "2019-02-27T17:05:11+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4653,7 +4937,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "ac-developers/eloquent-repository": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
