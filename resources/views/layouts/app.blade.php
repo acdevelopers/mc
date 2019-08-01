@@ -62,7 +62,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top border-0 rounded-0">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    M.C.I.S.
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -78,6 +78,47 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">
                                 {{ __('Admissions') }} <span class="badge badge-info">{{ date('Y') }}</span> </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <i class="fas fa-language"></i> Language [{{ app()->getLocale() }}] <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('language-ar-form').submit();">
+                                    {{ __('Arabic') }}
+                                </a>
+
+                                <form id="language-ar-form" action="{{ route('lang') }}" method="POST" style="display: none;">
+                                    @csrf
+                                    <input type="text" name="lang" value="ar">
+                                </form>
+
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('language-en-form').submit();">
+                                    {{ __('English') }}
+                                </a>
+
+                                <form id="language-en-form" action="{{ route('lang') }}" method="POST" style="display: none;">
+                                    @csrf
+                                    <input type="text" name="lang" value="en">
+                                </form>
+
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('language-fr-form').submit();">
+                                    {{ __('French') }}
+                                </a>
+
+                                <form id="language-fr-form" action="{{ route('lang') }}" method="POST" style="display: none;">
+                                    @csrf
+                                    <input type="text" name="lang" value="fr">
+                                </form>
+                            </div>
                         </li>
 
                         <!-- Authentication Links -->
@@ -114,6 +155,8 @@
             </div>
         </nav>
 
+        @include('flash::message')
+
         @hasSection('page_title')
             <div class="container-fluid bg-white p-4">
                 <div class="container">
@@ -149,19 +192,19 @@
                     <feature-component-vue title="Partners">
                         <div class="row">
                             <div class="col-md-6 col-sm-6 pb-1">
-                                <img style="width: 160px; height: auto" src="{{ asset('img/placeholders/partners-placeholder-350x350.png') }}" alt="..." class="img-thumbnail">
+                                <img src="{{ asset('img/placeholders/partners-placeholder-350x350.png') }}" alt="..." class="img-thumbnail">
                             </div>
 
                             <div class="col-md-6 col-sm-6 pb-1">
-                                <img style="width: 160px; height: auto" src="{{ asset('img/placeholders/partners-placeholder-350x350.png') }}" alt="..." class="img-thumbnail">
+                                <img src="{{ asset('img/placeholders/partners-placeholder-350x350.png') }}" alt="..." class="img-thumbnail">
                             </div>
 
                             <div class="col-md-6 col-sm-6 pb-1">
-                                <img style="width: 160px; height: auto" src="{{ asset('img/placeholders/partners-placeholder-350x350.png') }}" alt="..." class="img-thumbnail">
+                                <img src="{{ asset('img/placeholders/partners-placeholder-350x350.png') }}" alt="..." class="img-thumbnail">
                             </div>
 
                             <div class="col-md-6 col-sm-6 pb-1">
-                                <img style="width: 160px; height: auto" src="{{ asset('img/placeholders/partners-placeholder-350x350.png') }}" alt="..." class="img-thumbnail">
+                                <img src="{{ asset('img/placeholders/partners-placeholder-350x350.png') }}" alt="..." class="img-thumbnail">
                             </div>
                         </div>
                     </feature-component-vue>
@@ -271,5 +314,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+        $('#flash-overlay-modal').modal();
+    </script>
 </body>
 </html>
