@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Ability;
 use App\Role;
 use App\User;
 use Illuminate\Auth\Events\Registered;
@@ -10,6 +11,12 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Silber\Bouncer\BouncerFacade;
 
+/**
+ * Class InstallationCommand
+ *
+ * @package App\Console\Commands
+ * @author Anitche Chisom
+ */
 class InstallationCommand extends Command
 {
     /**
@@ -27,7 +34,7 @@ class InstallationCommand extends Command
     protected $description = 'Install the MCIS web application.';
 
     /**
-     * Applications roles.
+     * Application roles.
      *
      * @var array
      */
@@ -60,7 +67,7 @@ class InstallationCommand extends Command
         [
             'name' => 'active',
             'title' => 'Active',
-            'level' => 5
+            'level' => 6
         ],
     ];
 
@@ -125,7 +132,7 @@ class InstallationCommand extends Command
 
         $bar->finish();
 
-        $this->info("Roles and permission created!");
+        $this->info("Roles created!");
 
         $progress->advance();
     }
@@ -141,9 +148,9 @@ class InstallationCommand extends Command
         $this->info("Creating a superuser for the application.");
 
         $user = [];
-        $user['name'] = $this->ask("Provide a name for the superuser");
-        $user['email'] = $this->ask("Provide an email account for the superuser");
-        $user['password'] = Hash::make($this->secret("Provide a password for the superuser"));
+        $user['name'] = env('SUPERUSER_NAME') ?: $this->ask("Provide a name for the superuser");
+        $user['email'] = env('SUPERUSER_EMAIL') ?: $this->ask("Provide an email account for the superuser");
+        $user['password'] = Hash::make(env('SUPERUSER_PASSWORD') ?: $this->secret("Provide a password for the superuser"));
 
         $superuser = User::create($user);
 

@@ -46,6 +46,10 @@ export default class Errors {
         this.errors = errors;
     }
 
+    class(field) {
+        return this.has(field) ? 'form-control is-invalid' : 'form-control';
+    }
+
 
     /**
      * Clear one or all error fields.

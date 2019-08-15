@@ -13,8 +13,13 @@
 
 Route::view('/', 'welcome');
 
-Auth::routes(['verify' => true]);
+Auth::routes(['register']);
 
-Route::get('/dashboard', 'DashboardController')->name('dashboard');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/lang', 'LangController')->name('lang');
+
+// pages routes...
+Route::resource('pages', 'PageController');
+
+Route::view('/contact-us', 'pages.contact')->name('contact');

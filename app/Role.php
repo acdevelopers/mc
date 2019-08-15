@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Laracodes\Presenter\Traits\Presentable;
 use Spatie\Translatable\HasTranslations;
 
 /**
@@ -12,7 +13,15 @@ use Spatie\Translatable\HasTranslations;
  */
 class Role extends \Silber\Bouncer\Database\Role
 {
-    use HasTranslations;
+    use HasTranslations, Presentable;
 
+    /**
+     * @var array
+     */
     public $translatable = ['title'];
+
+    /**
+     * @var \App\Presenters\RolePresenter|string
+     */
+    protected $presenter = 'App\Presenters\RolePresenter';
 }

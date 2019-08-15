@@ -1,19 +1,18 @@
 {
-    "name": "ac-developers/mc",
+    "name": "laravel/laravel",
     "type": "project",
-    "description": "Web application for Merited Crown International School.",
-    "authors": [
-        {
-            "name": "Anitche Chisom",
-            "email": "anitchec.dev@gmail.com"
-        }
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
     ],
+    "license": "MIT",
     "require": {
         "php": "^7.1.3",
         "ac-developers/eloquent-repository": "dev-master",
-        "davejamesmiller/laravel-breadcrumbs": "5.x",
+        "cviebrock/eloquent-sluggable": "^4.8",
         "fideloper/proxy": "^4.0",
-        "jamesmills/eloquent-uuid": "^1.2",
+        "guilhermegonzaga/presenter": "^1.0",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",

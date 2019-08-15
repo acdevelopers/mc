@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/**
+ * Class LangController
+ *
+ * @package App\Http\Controllers
+ * @author Anitche Chisom
+ */
 class LangController extends Controller
 {
     /**

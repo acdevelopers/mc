@@ -5,11 +5,11 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use JamesMills\Uuid\HasUuidTrait;
+use Silber\Bouncer\Database\Concerns\HasRoles;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasUuidTrait;
+    use Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
